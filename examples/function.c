@@ -1,6 +1,6 @@
-function foo(bool a, bool b) { // argument
+function foo(init a, b) { // argument, first is new variable, second is adress
 	if(b == a) { // operator if and argument
 		a = !a;
 	}
-	end a or b; // return a or b
+	end (a or b); // return value
 }

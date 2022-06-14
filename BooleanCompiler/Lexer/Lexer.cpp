@@ -19,6 +19,7 @@ bool Lexer::next_token() {
 	for(size_t i = 0; i < TypeListLen; i++) {
 		auto tok = tokentype[i];
 		auto regex = tok.second._regex;
-		auto result = _code.
+		auto result = _code.get_code().substr(0,regex.size());
+		return true;
 	}
 }

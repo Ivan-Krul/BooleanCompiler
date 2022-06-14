@@ -1,13 +1,13 @@
 
 function main() { //main function
 //bool [name]; // coment and always new variable will be with false signal
-	bool a = true; // initialization in var a and ; at the end
-	bool b;
+	init a = true; // initialization in var a and ; at the end
+	init b;
 
-	a = a or b; // assign a and operator "or"
-	bool c = a and b; // initialization c and operator "and"
+	init a = a or b; // assign a and operator "or"
+	init c = a and b; // initialization c and operator "and"
 
-	bool d = not c; // operator not
+	init d = not c; // operator not
 
 	// | - or, & - and, ! - not
 

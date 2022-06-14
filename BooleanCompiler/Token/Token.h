@@ -24,16 +24,11 @@ const std::pair<std::string, Type> TypeList[] = {
 
 static size_t TypeListLen = std::size(TypeList);
 
-class Token {
-public:
-
-
+struct Token {
 	Type _type;
 	std::string _text;
 	size_t _pos;
-public:
-	Token(Type type, std::string text, size_t pos);
 
-	~Token();
+	Token(Type type, std::string text, size_t pos);
 };
 #include "Token.cpp"

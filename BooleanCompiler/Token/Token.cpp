@@ -5,8 +5,3 @@ Token::Token(Type type, std::string text, size_t pos) {
 	_text = text;
 	_pos = pos;
 }
-
-
-Token::~Token() {
-
-}

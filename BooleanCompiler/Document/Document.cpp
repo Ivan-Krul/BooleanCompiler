@@ -2,6 +2,7 @@
 
 void Document::write(std::string dir) {
 	std::ifstream ifs;
+	_code = "";
 	ifs.open(dir);
 
 	if(!ifs.is_open()) {
@@ -16,11 +17,16 @@ void Document::write(std::string dir) {
 	std::string str;
 	while(ifs) {
 		std::getline(ifs, str);
-		_code += str;
-		std::clog << log << "Document::write(std::string dir) -> string is writed";
+		_code += str; 
+		_code += '\n';
+		std::clog << log << "Document::write(std::string dir) -> string is writed\n";
 	}
 
 	ifs.close();
+}
+
+std::string Document::get_code() {
+	return _code;
 }
 
 size_t Document::size() {
