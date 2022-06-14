@@ -4,7 +4,7 @@ function main() { //main function
 	bool a = true; // initialization in var a and ; at the end
 	bool b;
 
-	a = a or b; // appropriation a and operator "or"
+	a = a or b; // assign a and operator "or"
 	bool c = a and b; // initialization c and operator "and"
 
 	bool d = not c; // operator not

@@ -3,19 +3,15 @@
 
 #include <iostream>
 #include "Define/Define.h"
+#include "Document/Document.h"
+#include "Token/Token.h"
+#include "Lexer/Lexer.h"
 
 int main(size_t args, char* argv[]) {
-	for(size_t i = 0; i < args; i++)
-		std::cout << argv[i]<<'\n';
+	std::clog << log << "function main(size_t args, char* argv[]) is started\n";
+	Document doc;
+	doc.write("code.bol");
 
-	int a = 10;
-	int b = 4;
-
-	std::cout << to_bools<int>(a) << ' '<< to_bools<int>(b)<<'\n';
-
-	a <<= b;
-
-	std::cout << to_bools<int>(a)<< '\n';
-
+	std::clog << log << "function main(size_t args, char* argv[]) is done\n";
 	return 0;
 }

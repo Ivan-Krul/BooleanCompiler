@@ -3,6 +3,16 @@
 #define SYMTRUE_ '1'
 #define SYMFALSE '0'
 
+std::ostream& log(std::ostream& out) {
+	return out << "LOG: ";
+}
+std::ostream& err(std::ostream& out) {
+	return out << "ERR: ";
+}
+std::ostream& out(std::ostream& out) {
+	return out << "OUT: ";
+}
+
 template<typename T>
 char* to_bool(T adr) {
 	char* result;
@@ -13,6 +23,7 @@ char* to_bool(T adr) {
 		result[sizeof(T) * 8-i-1] = (adr / int(pow(2,i))) % 2 == 1 ? SYMTRUE_ : SYMFALSE;
 	}
 
+	
 	return result;
 }
 

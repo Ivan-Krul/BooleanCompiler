@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (BooleanCompiler "BooleanCompiler.cpp"  "Define/Define.h" "Document/Document.h")
+add_executable (BooleanCompiler "BooleanCompiler.cpp")
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
