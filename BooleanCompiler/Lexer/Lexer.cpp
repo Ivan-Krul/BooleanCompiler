@@ -19,7 +19,9 @@ bool Lexer::next_token() {
 	for(size_t i = 0; i < TypeListLen; i++) {
 		auto tok = tokentype[i];
 		auto regex = tok.second._regex;
-		auto result = _code.get_code().substr(0,regex.size());
-		return true;
+		auto result = _code.get_code().substr(regex.size());
+		std::clog << log << "Lexer::next_token() -> \"" << result << "\"\n";
+		std::clog << log << "Lexer::next_token() -> Token is "<<tok.second._name<<"\n";
 	}
+	return true;
 }

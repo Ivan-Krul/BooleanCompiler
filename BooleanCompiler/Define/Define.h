@@ -3,13 +3,13 @@
 #define SYMTRUE_ '1'
 #define SYMFALSE '0'
 
-std::ostream& log(std::ostream& out) {
+static std::ostream& log(std::ostream& out) {
 	return out << "LOG: ";
 }
-std::ostream& err(std::ostream& out) {
+static std::ostream& err(std::ostream& out) {
 	return out << "ERR: ";
 }
-std::ostream& out(std::ostream& out) {
+static std::ostream& out(std::ostream& out) {
 	return out << "OUT: ";
 }
 

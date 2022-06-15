@@ -20,6 +20,7 @@ void Document::write(std::string dir) {
 		_code += str; 
 		_code += '\n';
 		std::clog << log << "Document::write(std::string dir) -> string is writed\n";
+		_strings++;
 	}
 
 	ifs.close();
@@ -31,6 +32,10 @@ std::string Document::get_code() {
 
 size_t Document::size() {
 	return _code.size();
+}
+
+size_t Document::strings() {
+	return _strings;
 }
 
 Document& Document::operator=(Document& doc) {
