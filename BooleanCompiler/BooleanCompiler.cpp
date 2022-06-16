@@ -8,19 +8,18 @@
 #include "Lexer/Lexer.h"
 #include "Logger/Logger.h"
 
+size_t Logger::count = 0;
+
 int main(int args, char* argv[]) {
-	std::clog << log << "function main(size_t args, char* argv[]) is started\n";
+	Logger log("main",true);
+	log << "function main(size_t args, char* argv[]) is started\n";
 
-	/*Document doc;
+	Document doc;
 	doc.write("code.bol");
-	Lexer l(doc);
-	l.lex_analyse();
-	*/
-	Logger l("test");
-
-	l << "heya";
+	//Lexer l(doc);
+	//l.lex_analyse();
 	
 
-	std::clog << log << "function main(size_t args, char* argv[]) is done\n";
+	log << "function main(size_t args, char* argv[]) is done\n";
 	return 0;
 }

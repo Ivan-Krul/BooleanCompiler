@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#define OUT_LOG_IN_CONSOLE
 #define SYMTRUE_ '1'
 #define SYMFALSE '0'
 

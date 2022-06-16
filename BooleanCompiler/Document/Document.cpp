@@ -1,5 +1,9 @@
 #include "Document.h"
 
+Document::Document() {
+	_log = new Logger("document");
+}
+
 void Document::write(std::string dir) {
 	std::ifstream ifs;
 	_code = "";
@@ -19,7 +23,7 @@ void Document::write(std::string dir) {
 		std::getline(ifs, str);
 		_code += str; 
 		_code += '\n';
-		std::clog << log << "Document::write(std::string dir) -> string is writed\n";
+		*_log << "Document::write(std::string dir) -> string is writed\n";
 		_strings++;
 	}
 
@@ -41,4 +45,8 @@ size_t Document::strings() {
 Document& Document::operator=(Document& doc) {
 	_code = doc._code;
 	return doc;
+}
+
+Document::~Document() {
+	delete _log;
 }
