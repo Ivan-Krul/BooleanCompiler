@@ -10,11 +10,11 @@ void Document::write(std::string dir) {
 	ifs.open(dir);
 
 	if(!ifs.is_open()) {
-		std::cerr << err << "Document::write(std::string dir) -> file isn't open\n";
+		*_log << "Document::write(std::string dir) -> file isn't open\n";
 		return;
 	}
 	if(ifs.fail()) {
-		std::cerr << err << "Document::write(std::string dir) -> file is failed\n";
+		*_log << "Document::write(std::string dir) -> file is failed\n";
 		return;
 	}
 
@@ -32,6 +32,10 @@ void Document::write(std::string dir) {
 
 std::string Document::get_code() {
 	return _code;
+}
+
+void Document::set_code(std::string what) {
+	_code = what;
 }
 
 size_t Document::size() {

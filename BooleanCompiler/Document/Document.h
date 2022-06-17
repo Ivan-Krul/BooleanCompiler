@@ -13,6 +13,7 @@ public:
 	Document();
 	void write(std::string dir);
 	std::string get_code();
+	void set_code(std::string what);
 	size_t size();
 	size_t strings();
 	Document& operator=(Document& doc);
