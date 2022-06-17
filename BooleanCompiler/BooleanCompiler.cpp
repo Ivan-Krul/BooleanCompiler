@@ -10,14 +10,16 @@
 #include "Logger/Logger.h"
 
 int main(int args, char* argv[]) {
-	Logger log("main");
-	log << "function main(size_t args, char* argv[]) is started\n";
+	std::clog << log << "function main(size_t args, char* argv[]) is started\n";
+	for(int a = 0; a < args; a++) {
+		std::clog << log << "argument[" << a << "] -> " << argv[a]<<'\n';
+	}
 
 	Document doc;
 	doc.write("code.bol");
 	Lexer l(doc);
 	l.lex_analyse();
-	log << "function main(size_t args, char* argv[]) is done\n";
 
+	std::clog << log << "function main(size_t args, char* argv[]) is done\n";
 	return 0;
 }
