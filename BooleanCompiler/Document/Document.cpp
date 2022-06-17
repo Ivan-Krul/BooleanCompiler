@@ -1,7 +1,7 @@
 #include "Document.h"
 
 Document::Document() {
-	_log = new Logger("document");
+	_log = new Logger("Document");
 	*_log << "Document -> starting up\n";
 }
 

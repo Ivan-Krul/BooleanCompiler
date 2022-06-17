@@ -1,13 +1,14 @@
 #include "Lexer.h"
 
 Lexer::Lexer(Document& code) {
-	_log = new Logger("lexer");
+	_log = new Logger("Lexer");
+	*_log << "Lexer -> starting up\n";
 	_code = code;
 }
 
 std::list<Token> Lexer::lex_analyse() {
 	while(next_token()) {
-		*_log << "Lexer::lex_analyse() -> Token\n";
+		*_log << "Lexer::lex_analyse() -> next token\n";
 	}
 	return _token;
 }
@@ -38,5 +39,6 @@ bool Lexer::next_token() {
 }
 
 Lexer::~Lexer() {
+	*_log << "Lexer -> ending up\n";
 	delete _log;
 }
