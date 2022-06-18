@@ -8,14 +8,13 @@
 extern int log_count = 0;
 
 class Logger {
-	std::ofstream _ofs;
+protected:
+	std::ostream* _out;
+	void _colontitle_head(std::ostream& out, time_t now);
+	void _colontitle_foot(std::ostream& what, time_t now);
 public:
-	Logger(std::string name, bool need_rewrite = true);
-
-	template<typename T>
-	std::ostream& operator<<(T what);
-
-	~Logger();
+	virtual void init() = 0;
+	virtual void finit() = 0;
 };
 #include "Logger.cpp"
 

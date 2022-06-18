@@ -12,12 +12,12 @@ void Document::write(std::string dir) {
 
 	if(!ifs.is_open()) {
 		*_log << "Document::write(std::string dir) -> file isn't open\n";
-		std::cerr << err << "Document::write(std::string dir) -> file isn't open\n";
+		std::cerr<<std::setw(9) << err << "Document::write(std::string dir) -> file isn't open\n";
 		return;
 	}
 	if(ifs.fail()) {
 		*_log << "Document::write(std::string dir) -> file is failed\n";
-		std::cerr << err << "Document::write(std::string dir) -> file is failed\n";
+		std::cerr << std::setw(9) << err << "Document::write(std::string dir) -> file is failed\n";
 		return;
 	}
 
