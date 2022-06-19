@@ -11,4 +11,3 @@ void Logger::_colontitle_foot(std::ostream& out, time_t now = time(0)) {
 	out << "Time end write in   - " << std::ctime(&now);
 	log_count--;
 }
-

@@ -4,10 +4,13 @@
 class FileLogger : public Logger {
 	std::ofstream _ofs;
 public:
-	init(std::string name, bool need_rewrite = true);
+	void init(std::string name);
 
 	template<typename T>
-	std::ostream& operator<<(T what);
+	void get(T what);
 
+	void finit() override;
 	~FileLogger();
 };
+#include "FileLogger.cpp"
+

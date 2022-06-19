@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <iomanip>
 #define SYMTRUE_ '1'
 #define SYMFALSE '0'
 
