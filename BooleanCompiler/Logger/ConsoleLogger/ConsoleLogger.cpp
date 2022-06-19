@@ -12,3 +12,7 @@ void ConsoleLogger::get(T what) {
 void ConsoleLogger::finit() {
 	_colontitle_foot(std::clog);
 }
+
+ConsoleLogger::~ConsoleLogger() {
+	finit();
+}

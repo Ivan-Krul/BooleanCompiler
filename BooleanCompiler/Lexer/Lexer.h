@@ -7,7 +7,6 @@
 class Lexer {
 	Document _code;
 	size_t _pos = 0;
-	Logger* _log;
 
 	std::list<Token> _token;
 

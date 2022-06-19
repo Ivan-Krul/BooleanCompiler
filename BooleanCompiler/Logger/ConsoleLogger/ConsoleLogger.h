@@ -9,5 +9,6 @@ public:
 	void get(T what);
 
 	void finit() override;
+	~ConsoleLogger();
 };
 #include "ConsoleLogger.cpp"

@@ -1,14 +1,13 @@
 #include "Lexer.h"
 
 Lexer::Lexer(Document& code) {
-	_log = new Logger("Lexer");
-	*_log << "Lexer -> starting up\n";
+	mainlog.get("Lexer -> starting up\n");
 	_code = code;
 }
 
 std::list<Token> Lexer::lex_analyse() {
 	while(next_token()) {
-		*_log << "Lexer::lex_analyse() -> next token\n";
+		mainlog.get("Lexer::lex_analyse() -> next token\n");
 	}
 	return _token;
 }
@@ -16,7 +15,6 @@ std::list<Token> Lexer::lex_analyse() {
 bool Lexer::next_token() {
 	if(!(_pos < _code.size()))
 		return false;
-	*_log << "Lexer::next_token() -> " <<"new call"<< '\n';
 	auto tokentypeval = TypeList;
 	for(size_t i = 0; i < TypeListLen; i++) {
 		auto tokype = tokentypeval[i];
@@ -30,7 +28,9 @@ bool Lexer::next_token() {
 			Token token(type, regex, _pos);
 			_pos += regex.length();
 			_token.push_back(token);
-			*_log << "Lexer::next_token() -> " << tokype.second._name << '\n';
+			mainlog.get("Lexer::next_token() -> ");
+			mainlog.get(tokype.second._name);
+			mainlog.get('\n');
 			return true;
 		}
 		
@@ -39,6 +39,5 @@ bool Lexer::next_token() {
 }
 
 Lexer::~Lexer() {
-	*_log << "Lexer -> ending up\n";
-	delete _log;
+	mainlog.get("Lexer -> ending up\n");
 }

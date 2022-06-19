@@ -5,7 +5,6 @@
 #include "../Logger/Logger.h"
 
 class Document {
-	Logger* _log;
 	std::string _code;
 	size_t _strings = 0;
 

@@ -15,5 +15,11 @@ public:
 	virtual void init(std::string name) = 0;
 	virtual void finit() = 0;
 };
-#include "Logger.cpp"
 
+#include "Logger.cpp"
+#include "ConsoleLogger/ConsoleLogger.h"
+#include "FileLogger/FileLogger.h"
+
+#define LOGGER FileLogger
+
+static LOGGER mainlog;

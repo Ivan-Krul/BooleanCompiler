@@ -1,8 +1,7 @@
 #include "Document.h"
 
 Document::Document() {
-	_log = new Logger("Document");
-	*_log << "Document -> starting up\n";
+	mainlog.get("Document -> starting up\n");
 }
 
 void Document::write(std::string dir) {
@@ -11,13 +10,11 @@ void Document::write(std::string dir) {
 	ifs.open(dir);
 
 	if(!ifs.is_open()) {
-		*_log << "Document::write(std::string dir) -> file isn't open\n";
-		std::cerr<<std::setw(9) << err << "Document::write(std::string dir) -> file isn't open\n";
+		mainlog.get("Document::write(std::string dir) -> file isn't open\n");
 		return;
 	}
 	if(ifs.fail()) {
-		*_log << "Document::write(std::string dir) -> file is failed\n";
-		std::cerr << std::setw(9) << err << "Document::write(std::string dir) -> file is failed\n";
+		mainlog.get("Document::write(std::string dir) -> file is failed\n");
 		return;
 	}
 
@@ -26,7 +23,7 @@ void Document::write(std::string dir) {
 		std::getline(ifs, str);
 		_code += str; 
 		_code += '\n';
-		*_log << "Document::write(std::string dir) -> string is writed\n";
+		mainlog.get("Document::write(std::string dir) -> string is writed\n");
 		_strings++;
 	}
 
@@ -38,7 +35,7 @@ std::string Document::get_code() {
 }
 
 void Document::set_code(std::string what) {
-	*_log << "Document::set_code(std::string what) -> reset _code\n";
+	mainlog.get("Document::set_code(std::string what) -> reset _code\n");
 	_code = what;
 }
 
@@ -51,12 +48,11 @@ size_t Document::strings() {
 }
 
 Document& Document::operator=(Document& doc) {
-	*_log << "Document::operator=(Document& doc) -> copying\n";
+	mainlog.get("Document::operator=(Document& doc) -> copying\n");
 	_code = doc._code;
 	return doc;
 }
 
 Document::~Document() {
-	*_log << "Document -> ending up\n";
-	delete _log;
+	mainlog.get("Document -> ending up\n");
 }
