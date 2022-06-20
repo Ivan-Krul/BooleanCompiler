@@ -5,3 +5,5 @@ struct Type {
 	std::string _name;
 	std::string _regex;
 };
+
+#include "TypeList.cpp"

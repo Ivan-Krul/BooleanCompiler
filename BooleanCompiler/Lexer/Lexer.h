@@ -10,6 +10,8 @@ class Lexer {
 
 	std::list<Token> _token;
 
+
+	bool _is_comment = false;
 public:
 	Lexer(Document& code);
 

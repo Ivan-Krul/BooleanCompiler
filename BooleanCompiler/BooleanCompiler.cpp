@@ -18,15 +18,20 @@ int main(int args, char* argv[]) {
 		mainlog.get(argv[a]);
 		mainlog.get('\n');
 	}
-
 	using namespace std::chrono_literals;
-	std::this_thread::sleep_for(5s);
+	std::this_thread::sleep_for(1s);
+
+
 	Document doc;
-	doc.write("code.bol");
+	doc.write("code.ec");
 	Lexer l(doc);
-	l.lex_analyse();
+	auto& token = l.lex_analyse();
 
+	for(auto iter = token.begin(); iter != token.end();iter++) {
+		mainlog.get(iter->_type._regex);
+	}
 
+	std::this_thread::sleep_for(1s);
 	mainlog.get("function main(size_t args, char* argv[]) is done\n");
 	return 0;
 }

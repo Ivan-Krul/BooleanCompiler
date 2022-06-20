@@ -11,10 +11,12 @@ void Document::write(std::string dir) {
 
 	if(!ifs.is_open()) {
 		mainlog.get("Document::write(std::string dir) -> file isn't open\n");
+		std::clog << '\a';
 		return;
 	}
 	if(ifs.fail()) {
 		mainlog.get("Document::write(std::string dir) -> file is failed\n");
+		std::clog << '\a';
 		return;
 	}
 

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <ctime>
+#include <thread>
 #include "../Define/Define.h"
 
 extern int log_count = 0;
@@ -20,6 +21,6 @@ public:
 #include "ConsoleLogger/ConsoleLogger.h"
 #include "FileLogger/FileLogger.h"
 
-#define LOGGER FileLogger
+#define LOGGER ConsoleLogger
 
 static LOGGER mainlog;
