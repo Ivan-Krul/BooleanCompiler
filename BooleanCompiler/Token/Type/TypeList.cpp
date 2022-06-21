@@ -3,8 +3,8 @@
 
 extern std::pair<std::string, Type> TypeList[] = {
 	{"INIT",{"INIT","init"}},
-	{"BEGCOMMENT",{"BEGCOMMENT","/*"}},
-	{"ENDCOMMENT",{"ENDCOMMENT","*/"}},
+	{"BEGBIGCOMMENT",{"BEGBIGCOMMENT","/*"}},
+	{"ENDBIGCOMMENT",{"ENDBIGCOMMENT","*/"}},
 	{"SEMICOLON",{"SEMICOLON",";"}},
 	{"SPACE(T)",{"SPACE(T)","\t"}},
 	{"SPACE(N)",{"SPACE(N)","\n"}},
@@ -88,5 +88,19 @@ extern std::pair<std::string, Type> AlphabetVar[] = {
 	{"CHAR(Z)",{"CHAR(Z)","z"}}
 };
 
+extern std::pair<std::string, Type> NumberVar[] = {
+	{"NUM(0)",{"NUM(0)","0"}},
+	{"NUM(1)",{"NUM(1)","1"}},
+	{"NUM(2)",{"NUM(2)","2"}},
+	{"NUM(3)",{"NUM(3)","3"}},
+	{"NUM(4)",{"NUM(4)","4"}},
+	{"NUM(5)",{"NUM(5)","5"}},
+	{"NUM(6)",{"NUM(6)","6"}},
+	{"NUM(7)",{"NUM(7)","7"}},
+	{"NUM(8)",{"NUM(8)","8"}},
+	{"NUM(9)",{"NUM(9)","9"}}
+};
+
 static size_t AlphabetVarLen = std::size(AlphabetVar);
 static size_t TypeListLen = std::size(TypeList);
+static size_t NumberVarLen = std::size(NumberVar);

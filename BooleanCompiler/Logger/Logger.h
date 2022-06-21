@@ -8,6 +8,10 @@
 
 extern int log_count = 0;
 
+using namespace std::literals;
+//#define LOG_DELAY 1ms
+
+
 class Logger {
 protected:
 	void _colontitle_head(std::ostream& out, time_t now);

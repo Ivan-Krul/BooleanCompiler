@@ -21,17 +21,25 @@ int main(int args, char* argv[]) {
 	using namespace std::chrono_literals;
 	std::this_thread::sleep_for(1s);
 
+	if(args > 0) {
+		Document doc;
+		doc.write("code.ec");
+		Lexer l(doc);
+		auto& token = l.lex_analyse();
 
-	Document doc;
-	doc.write("code.ec");
-	Lexer l(doc);
-	auto& token = l.lex_analyse();
+		//for(auto iter = token.begin(); iter != token.end(); iter++) {
+		//	mainlog.get(iter->_type._name);
+		//	mainlog.get("\n");
+		//}
 
-	for(auto iter = token.begin(); iter != token.end();iter++) {
-		mainlog.get(iter->_type._regex);
+		std::this_thread::sleep_for(1s);
+		mainlog.get("function main(size_t args, char* argv[]) is done\n");
+		return 0;
+	} else {
+		mainlog.get("\"put file path like argument of launch the program\"\n");
+		std::this_thread::sleep_for(1s);
+		mainlog.get("function main(size_t args, char* argv[]) is terminated\n");
+		return 1;
 	}
 
-	std::this_thread::sleep_for(1s);
-	mainlog.get("function main(size_t args, char* argv[]) is done\n");
-	return 0;
 }
